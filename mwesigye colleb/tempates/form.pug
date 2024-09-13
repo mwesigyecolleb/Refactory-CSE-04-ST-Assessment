@@ -1,0 +1,49 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Online Flight Booking Form
+  link(rel='stylesheet' href='/assets/styles.css')
+.header
+  h1 Online FlIGHT BOOKING FORM
+  .header2
+    h2 Rim Aviation Group
+    img(src='images/logo.png' alt='logo')
+form#bookingForm(action='/submit', method='POST')
+  fieldset
+    legend Passenger Information
+    label(for='fullName') Full Name:
+    input#fullName(type='text' name='fullName' required='')
+    label(for='gender') Gender:
+    select#gender(name='gender' required='')
+      option(value='') -- Select --
+      option(value='male') Male
+      option(value='female') Female
+      option(value='other') Other
+    label(for='dob') Date of Birth
+    input#dob(type='date' name='dob' required='')
+    label(for='nationality') Nationality
+    input#nationality(type='text' name='nationality' required='')
+  fieldset
+    legend Contact Information
+    label(for='phone') Phone Number
+    input#phone(type='tel' name='phone' required='')
+    label(for='email') Email Address:
+    input#email(type='email' name='email' required='')
+    label(for='pobox') PO Box Number
+    input#pobox(type='text' name='pobox' required='')
+    label(for='emergency') Emergency Number
+    input#emergency(type='tel' name='emergency' required='')
+  fieldset
+    legend Flight Information
+    label(for='passport') Passport Number
+    input#passport(type='text' name='passport' required='')
+    label(for='visaDocument') Visa Document:
+    input#visaDocument(type='file' name='visaDocument' required='')
+    label(for='departureCity') Departure City:
+    input#departureCity(type='text' name='departureCity' required='')
+    label(for='destinationCity') Destination City:
+    input#destinationCity(type='text' name='destinationCity' required='')
+  .successful(style='display: none;') Form Submitted Successfully!
+  button(type='submit') Submit
+script(src='/views/script.js')

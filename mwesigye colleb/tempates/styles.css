@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    width: auto;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.successful {
+    display: none;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    width: 100%;
+    color: white;
+    padding-left: 20px;
+    background-color: rgb(192, 0, 0) ;
+    gap:480px;
+    align-items: center;
+    height: 100px; 
+}
+
+.header2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    align-items: center;
+    gap: 30px;
+}
+fieldset {
+    flex: 1 1  30%; /* Allow each fieldset to take up to 30% of the row */
+    margin: 10px; /* Add margin for spacing */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    color: rgb(192, 0, 0);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.header2 h2 {
+    color: white;
+}
+button {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    background-color: rgb(192, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 850px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Flight Booking Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+    <h1>Online Flight Booking Form</h1>
+   <div class = "header2"> 
+    <h2>Rim Aviation Group</h2>
+    <img src="/tempates/images/logo.png" alt="logo">
+</div>
+</div>
+    <form id="bookingForm">
+        <fieldset>
+            <legend>PASSENGER INFORMATION</legend>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">-- Select --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="nationality">Nationality</label>
+            <input type="text" id="nationality" name="nationality" required>
+        </fieldset>
+        <fieldset>
+            <legend>CONTACT INFORMATION</legend>
+            
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            
+
+            <label for="pobox">PO Box Number</label>
+            <input type="text" id="pobox" name="pobox" required>
+
+            <label for="emergency">Emergency Number</label>
+            <input type="tel" id="emergency" name="emergency" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>FLIGHT INFORMATION</legend>
+            <label for="passport">Passport Number</label>
+            <input type="text" id="passport" name="passport" required>
+
+            <label for="visaDocument">Visa Document:</label>
+            <input type="file" id="visaDocument" name="visaDocument" required>
+
+            <label for="departureCity">Departure City:</label>
+            <input type="text" id="departureCity" name="departureCity" required>
+
+            <label for="destinationCity">Destination City:</label>
+            <input type="text" id="destinationCity" name="destinationCity" required>
+        </fieldset>
+<div class = "successful" style="display: none;">Form Submitted Successfully!</div>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.querySelector('.successful').style.display = 'block';
+    });
+
+    document.getElementById('visaDocument').addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+            alert(`Selected file: ${file.name}`);
+        }
+    });
+    document.getElementById('bookingForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Clear previous error messages
+        const errorMessages = document.querySelectorAll('.error-message');
+        errorMessages.forEach(msg => msg.remove());
+
+        // Check each input for validity
+        let isValid = true;
+        const inputs = this.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            if (!input.checkValidity()) {
+                isValid = false;
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.style.color = 'red'; // Style for error message
+                errorMessage.textContent = input.validationMessage; // Get the default validation message
+                input.parentNode.insertBefore(errorMessage, input.nextSibling); // Insert error message after the input
+            }
+        });
+
+       
+    });
+
+</script>
+
+</html>
