@@ -6,6 +6,10 @@ body {
 h1 {
     text-align: center;
 }
+.header img{
+    width: 100%;
+    height: 100%;
+}
 
 form {
     display: flex;
@@ -29,8 +33,7 @@ form {
     flex-wrap: wrap; /* Allow items to wrap to the next line */
     width: 100%;
     color: white;
-    padding-left: 20px;
-    background-color: rgb(192, 0, 0) ;
+    background-color: red ;
     gap:480px;
     align-items: center;
     height: 100px; 
@@ -53,7 +56,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    color: rgb(192, 0, 0);
+    color: red;
 }
 
 label {
@@ -75,7 +78,7 @@ button {
     display: block;
     width: 30%;
     padding: 10px;
-    background-color: rgb(192, 0, 0);
+    background-color: red;
     color: white;
     border: none;
     border-radius: 5px;

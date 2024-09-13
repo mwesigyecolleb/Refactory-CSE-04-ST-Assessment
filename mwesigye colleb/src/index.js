@@ -24,12 +24,14 @@ app.post('/submit', async (req, res) => {
     try {
         const flightBookingData = new FlightBooking(req.body);
         await flightBookingData.save();
-        res.redirect('/'); // Redirect after successful submission
+       // display the successful element from the pug file
+       res.render("index", { success: true, message: "Form submitted successfully" });
     } catch (error) {
         console.error("Error saving to database:", error);
-        res.status(500).send("Error saving data");
+        res.status(500).json({ success: false, message: 'Error saving data' });
     }
 });
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
